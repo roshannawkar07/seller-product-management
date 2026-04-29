@@ -5,6 +5,7 @@ const morgan = require("morgan");
 //imports routes
 const adminRoutes = require("./routes/admin.routes");
 const sellerRoutes = require("./routes/seller.routes");
+const productRoutes = require("./routes/product.routes");
 
 const app = express();
 
@@ -20,5 +21,6 @@ app.get("/", (req, res) => {
 // Routes
 app.use("/api/admin", adminRoutes);
 app.use("/api/seller", sellerRoutes);
+app.use("/api/product", productRoutes);
 
 module.exports = app;
