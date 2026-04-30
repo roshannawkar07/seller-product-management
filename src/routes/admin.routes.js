@@ -3,6 +3,11 @@ const router = express.Router();
 
 const { adminLogin } = require("../controllers/admin.controller");
 
-router.post("/login", adminLogin);
+const {
+  adminLoginValidation,
+  validate,
+} = require("../validators/admin.validator");
+
+router.post("/login", adminLoginValidation, validate, adminLogin);
 
 module.exports = router;
